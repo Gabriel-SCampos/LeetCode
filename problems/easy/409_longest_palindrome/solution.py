@@ -4,6 +4,27 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
+        letters_count = {letter: s.count(letter) for letter in set(s)}
+
+        has_impar_letter_occurrences = False
+        output = 1
+        for letter, count in letters_count.items():
+            if count % 2 == 0:
+                output += count
+            else:
+                output += count - 1
+                has_impar_letter_occurrences = True
+
+        if not has_impar_letter_occurrences:
+            output -= 1
+        return output
+
+    def longestPalindrome_first_attempt(self, s):
+        # this first version is not efficient, but it works
+        """
+        :type s: str
+        :rtype: int
+        """
         output = 0
         s_split = list(s)
         if not s_split:
