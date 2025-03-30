@@ -1,4 +1,4 @@
-from solution import Solution
+from problems.easy.longest_palindrome_409.solution import Solution
 import pytest
 
 @pytest.fixture
