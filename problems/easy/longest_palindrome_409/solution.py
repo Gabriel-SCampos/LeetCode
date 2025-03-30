@@ -6,16 +6,16 @@ class Solution(object):
         """
         letters_count = {letter: s.count(letter) for letter in set(s)}
 
-        has_impar_letter_occurrences = False
+        has_odd_letter_occurrences = False
         output = 1
-        for letter, count in letters_count.items():
+        for count in letters_count.values():
             if count % 2 == 0:
                 output += count
             else:
                 output += count - 1
-                has_impar_letter_occurrences = True
+                has_odd_letter_occurrences = True
 
-        if not has_impar_letter_occurrences:
+        if not has_odd_letter_occurrences:
             output -= 1
         return output
 
